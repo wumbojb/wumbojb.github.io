@@ -1,0 +1,58 @@
+{{- /*  DOSCUSSION DEACTIVE CLASS  */ -}}
+{{- $discussionFalse := (not (.Params.discussion | default site.Params.defaultDiscussion | default true)) -}}
+{{- $discussionClass := "" -}}
+{{- if $discussionFalse -}}
+  {{- $discussionClass = "nav__link--disable" -}}
+{{- end -}}
+
+<header class="sidebar">
+  <nav class="sidebar__header">
+    <a href="{{ relURL site.BaseURL }}" class="brand">
+      <img src="{{ relURL site.Params.logo }}" alt="Logo {{ site.Title }}" class="brand__logo">
+      <em class="brand__title">{{ site.Title }}</em>
+    </a>
+
+    <button data-sidebar="sidebar">
+      {{ partial "components/icon" (dict "name" "x") }}
+    </button>
+  </nav>
+  
+  <div class="search-bar">
+    <label class="search-form">
+      <span class="sr-only">Search</span>
+      <input type="search" name="searchInput" id="searchInput" class="search-form__input">
+    </label>
+
+    <nav class="search-results"></nav>
+  </div>
+
+  {{ with site.Params.menus }}
+  {{ range sort . "weight" }}
+    <div class="nav">
+      <strong class="nav__title">{{ .label }}</strong>
+      <nav class="nav__list">
+        {{ range sort .items "weight" }}
+        <a 
+          href="{{ .url | relURL }}" 
+          class="nav__link"
+            {{ with .targetBlank }}
+              target="_blank"
+              rel="noopener noreferrer"
+            {{ end }} 
+        >{{ .name }}</a>
+        {{ end }}
+      </nav>
+    </div>
+  {{ end }}
+  {{ end }}
+
+  <div class="nav">
+    <strong class="nav__label">Content</strong>
+    <nav class="nav__list">
+      <button data-tab="viewContent" class="nav__link">Page</button>
+      <button data-tab="viewDiscussion" class="nav__link {{ $discussionClass }}">Discussion</button>
+      {{ partial "components/github-link" . }}
+      {{ partial "components/theme-setting" . }}
+    </nav>
+  </div>
+</header>
