@@ -5,6 +5,7 @@ baseURL: https://wumbojb.github.io/
 languageCode: id
 title: Testing Only
 enableGitInfo: true
+enableEmoji: true
 
 #===================
 # PAGINATION SETTING

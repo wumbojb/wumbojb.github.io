@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ site.Language.LanguageCode }}" dir="{{ or site.Language.LanguageDirection `ltr` }}" data-theme="dark">
+<html lang="{{ site.Language.LanguageCode }}" dir="{{ or site.Language.LanguageDirection `ltr` }}" data-theme="light">
 <head>
   {{ partial "head/theme_init" . }}
   <meta charset="UTF-8">
@@ -26,7 +26,7 @@
 <body>
   {{ partial "header" . }}
   {{ partial "sidebar" . }}
-  <main>
+  <main class="markdown">
     <article class="tab-pane tab-pane--is-active">
       {{ partial "components/main" . }}
       {{ partial "components/taxonomy-term" . }}
