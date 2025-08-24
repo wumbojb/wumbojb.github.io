@@ -4,7 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ printf "%s | %s" .Title site.Title }}{{ end }}</title>
-  {{ partial "head/meta" . }}
+  {{- partial "head/ga" . -}}
+  {{- partial "head/og" . -}}
+  {{- partial "head/schema" . -}}
+  {{- partial "head/twitter_cards" . -}}
+  {{- range site.Params.favicons -}}
+    <link
+      rel="{{- .rel -}}"
+      {{- with .type -}}type="{{- . -}}"{{- end -}}
+      {{- with .size -}}sizes="{{- . -}}"{{- end -}}
+      href="{{- .href | absURL -}}"
+    />
+  {{- end -}}
+  <link rel="manifest" href="{{- "manifest.json" | absURL -}}" />
+  <link rel="sitemap" type="application/xml" href="{{- "sitemap.xml" | absURL -}}"/>
+  <meta name="robots" content="index, follow" />
   {{ partial "head/sass" . }}
   {{ partial "head/js" . }}
 </head>
