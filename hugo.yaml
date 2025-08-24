@@ -15,12 +15,29 @@ pagination:
   path: page
 
 #===================
+# GOOGLE ANALYTICS SETTING
+#===================
+services:
+  googleAnalytics:
+    id: G-MEASUREMENT_ID
+privacy:
+  googleAnalytics:
+    disable: false
+    respectDoNotTrack: false
+#===================
 # PARAMS SETTING
 #===================
 params:
   author: Putra Jaya
+  description: "Consectetur occaecat ut aute sint aliqua pariatur in nisi commodo."
   logo: assets/images/logo.png
-  
+  images:
+    - assets/images/logo.png
+    - assets/images/default-image.png
+  social:
+    facebook_admin: mpw
+    twitter: Masputrawae
+
   defaultToc: true
   defaultDiscussion: true
   defaultEditPage: true

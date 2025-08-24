@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html lang="{{ site.Language.LanguageCode }}" dir="{{ or site.Language.LanguageDirection `ltr` }}">
+<html lang="{{ site.Language.LanguageCode }}" dir="{{ or site.Language.LanguageDirection `ltr` }}" data-theme="dark">
 <head>
+  {{ partial "head/theme_init" . }}
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ printf "%s | %s" .Title site.Title }}{{ end }}</title>
@@ -26,7 +27,10 @@
   {{ partial "header" . }}
   {{ partial "sidebar" . }}
   <main>
-    <article class="tab-pane tab-pane--is-active">{{ partial "components/main" . }}</article>
+    <article class="tab-pane tab-pane--is-active">
+      {{ partial "components/main" . }}
+      {{ partial "components/taxonomy-term" . }}
+    </article>
     <aside class="tab-pane">{{ partial "components/discussion" }}</aside>
     <aside class="tab-pane">{{ partial "components/history" . }}</aside>
   </main>

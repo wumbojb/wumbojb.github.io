@@ -1,4 +1,4 @@
-{{- /*  DOSCUSSION DEACTIVE CLASS  */ -}}
+{{- /*  DISCUSSION DEACTIVE CLASS  */ -}}
 {{- $discussionFalse := (not (.Params.discussion | default site.Params.defaultDiscussion | default true)) -}}
 {{- $discussionClass := "" -}}
 {{- if $discussionFalse -}}
@@ -22,7 +22,6 @@
       <span class="sr-only">Search</span>
       <input type="search" name="searchInput" id="searchInput" class="search-form__input">
     </label>
-
     <nav class="search-results"></nav>
   </div>
 
