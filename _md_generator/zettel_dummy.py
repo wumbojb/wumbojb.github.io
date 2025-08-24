@@ -23,7 +23,7 @@ def load_yaml(file):
 # --- LOAD PLACEHOLDERS ---
 PLACEHOLDER_DIR = "./_md_generator/placeholders"
 ZETTEL_DIR = "notes/big"
-TOTAL_ZETTEL = 30000
+TOTAL_ZETTEL = 50000
 
 title_words = load_yaml(f"{PLACEHOLDER_DIR}/title_words.yaml")
 lorem_paragraphs = load_yaml(f"{PLACEHOLDER_DIR}/lorem_paragraphs.yaml")
