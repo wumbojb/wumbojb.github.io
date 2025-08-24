@@ -22,7 +22,7 @@ def load_yaml(file):
 
 # --- LOAD PLACEHOLDERS ---
 PLACEHOLDER_DIR = "./_md_generator/placeholders"
-TOTAL_POST_GEN = 20
+TOTAL_POST_GEN = 10000
 CONTENT_DIR = "content/blog"
 
 title_words = load_yaml(f"{PLACEHOLDER_DIR}/title_words.yaml")
@@ -54,10 +54,11 @@ def generate_table():
 
 def generate_image():
     if random.random() < 0.5:
-        return f"![Placeholder](https://placehold.co/{random.randint(200,600)}x{random.randint(200,400)})"
+        return f"![Placeholder](https://picsum.photos/id/{random.randint(1,600)}/{random.randint(200,400)}/{random.randint(200,600)})"
     else:
-        query = random.choice(["nature", "tech", "city", "abstract", "people"])
-        return f"![Unsplash](https://source.unsplash.com/random/400x300/?{query})"
+        return f"![Placeholder](https://picsum.photos/id/{random.randint(1,600)}/{random.randint(200,400)}/{random.randint(200,600)})"
+        # query = random.choice(["nature", "tech", "city", "abstract", "people"])
+        # return f"![Unsplash](https://source.unsplash.com/random/400x300/?{query})"
 
 def generate_blockquote():
     choices = [
@@ -80,7 +81,7 @@ def generate_inline_link():
 
 def generate_paragraph(current_slug, all_slugs):
     para = []
-    for _ in range(random.randint(2,5)):
+    for _ in range(random.randint(1,2)):
         chunk = " ".join(random.choices(lorem_paragraphs, k=random.randint(1,3)))
         para.append(chunk)
 
@@ -89,7 +90,7 @@ def generate_paragraph(current_slug, all_slugs):
         (0.4, lambda: f"**{random.choice(title_words)}**"),
         (0.3, lambda: f"*{random.choice(title_words)}*"),
         (0.25, lambda: "`example_code()`"),
-        (0.2, generate_code_block),
+        (1, generate_code_block),
         (0.3, generate_list),
         (0.25, generate_image),
         (0.15, generate_table),

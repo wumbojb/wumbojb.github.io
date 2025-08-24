@@ -1,9 +1,9 @@
 #===================
 # BASE SETTING
 #===================
-baseURL: https://masputrawae.github.io/simple-hugo-theme
+baseURL: https://wumbojb.github.io/
 languageCode: id
-title: Putra Jaya
+title: Testing Only
 enableGitInfo: true
 
 #===================
@@ -137,17 +137,17 @@ params:
 #===================
 mediaType: 'application/json'
 outputFormats:
-  search:
-    mediaType: 'application/json'
-    baseName: 'search'
-    isPlainText: true
-    notAlternative: true
+  # search:
+  #   mediaType: 'application/json'
+  #   baseName: 'search'
+  #   isPlainText: true
+  #   notAlternative: true
 
-  manifest:
-    mediaType            : 'application/json'
-    baseName             : 'manifest'
-    isPlainText          : true
-    notAlternative       : true
+  # manifest:
+  #   mediaType            : 'application/json'
+  #   baseName             : 'manifest'
+  #   isPlainText          : true
+  #   notAlternative       : true
 
   random-page:
     mediaType            : 'text/html'
@@ -161,8 +161,8 @@ outputs:
     - rss
     - sitemap
     - random-page
-    - search
-    - manifest
+    # - search
+    # - manifest
 
 #===================
 # MODULE SETTING
