@@ -1,63 +1,161 @@
 @use "../abstracts/variables" as v;
 @use "../abstracts/mixins" as m;
+@use "../abstracts/breakpoints" as b;
 
+// HEADER
+.header {
+  @include m.flex-justify(space-between, center);
+  @include m.width-height(100%, 4rem);
+  position: sticky;
+  inset-block-start: 0;
+  background-color: var(--second-bg);
+  border-block-end: 2px solid var(--base-border);
+  padding-inline: 1rem;
+  box-shadow: var(--base-shadow);
+  z-index: 500;
+
+  &__title {
+    font-size: v.$fs-8xl;
+    font-weight: bold;
+    font-family: v.$font-serif;
+    color: var(--second-color);
+    text-shadow: var(--second-text-shadow);
+  }
+
+  &__button {
+    color: var(--second-color);
+  }
+
+  &__icon {
+    @include m.size(v.$fs-10xl);
+    color: var(--second-color);
+  }
+}
+
+// SIDEBAR
 .sidebar {
   @include m.custom-scrollbar(var(--base-border), var(--primary));
   @include m.width-height(200px, 100dvh);
+  @include m.transition(inset-inline-start, visibility);
   padding: 1rem;
   overflow-y: auto;
   overflow-x: hidden;
-  inset-inline-start: 0;
   inset-block-start: 0;
   background-color: var(--second-bg);
   border-inline-end: 1px solid var(--base-border);
   position: fixed;
-}
+  inset-inline-start: -100%;
+  visibility: hidden;
+  z-index: 1000;
 
-.brand {
-  @include m.flex-justify(center, center);
-  flex-direction: column;
-  
-  &__logo {
-    width: 100px;
+  &__btn-close {
+    position: absolute;
+    inset-inline-end: 1rem;
+    inset-block-start: 1rem;
   }
 
-  &__title {
-    font-family: v.$font-serif;
-    font-style: normal;
-    font-weight: 700;
-    font-size: v.$fs-7xl;
-    color: var(--second-color);
-    text-shadow: var(--base-text-shadow);
+  &__btn-icon {
+    @include m.size(v.$fs-8xl);
+  }
+
+  &--is-active {
+    inset-inline-start: 0;
+    visibility: visible;
+  }
+
+  .brand {
+    @include m.flex-justify(center, center);
+    flex-direction: column;
+    margin-block-end: 2rem;
+
+    &__logo {
+      width: 100px;
+    }
+
+    &__title {
+      font-family: v.$font-serif;
+      font-style: normal;
+      font-weight: 700;
+      font-size: v.$fs-7xl;
+      color: var(--second-color);
+      text-shadow: var(--base-text-shadow);
+    }
+  }
+
+  .search-bar {
+    border: 1px solid var(--base-border);
+    box-shadow: var(--base-shadow);
+    border-radius: 0.25rem;
+    padding: 0.25rem 0.5rem;
+  }
+
+  .search-form {
+    &__input {
+      outline: none;
+    }
+  }
+
+  .nav {
+    padding: 1rem;
+    margin-block: 1rem 1.5rem;
+    border: 1px solid var(--base-border);
+    border-radius: 0.25rem;
+    box-shadow: var(--base-shadow);
+
+    &__label {
+      margin-block: 0rem 0.75rem;
+      display: block;
+      font-size: v.$fs-xl;
+    }
+
+    &__list {
+      display: grid;
+    }
+
+    &__link {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.11rem;
+      gap: 0.25rem;
+      color: var(--primary);
+      text-align: start;
+    }
   }
 }
 
-.search-bar {
-  border: 1px solid var(--base-border);
-  box-shadow: var(--base-shadow);
-  border-radius: 0.25rem;
-  padding: 0.25rem 0.5rem;
-}
-
-.search-form {
-  &__input {
-    outline: none;
-  }
-}
-
-.nav {
-  padding: 1rem;
-  margin-block: 1rem 1.5rem;
-  border: 1px solid var(--base-border);
-  border-radius: 0.25rem;
-  box-shadow: var(--base-shadow);
-
-  &__list {
+@include b.min(lg) {
+  body {
     display: grid;
+    grid-template-columns: 200px minmax(0, 1fr);
+    grid-template-areas:
+      "sidebar main"
+      "sidebar main"
+      "sidebar footer";
+    grid-template-rows: repeat(3, minmax(0, auto));
+    max-width: 1400px;
+    margin: 0 auto;
   }
 
-  &__link {
-    color: var(--primary);
-    text-align: start;
+  .header {
+    display: none;
+  }
+
+  .sidebar {
+    grid-area: sidebar;
+    visibility: visible;
+    inset-inline-start: 0;
+
+    &__btn-close {
+      display: none;
+    }
+  }
+
+  .markdown {
+    grid-area: main;
+    padding: 2rem;
+  }
+
+  .footer {
+    grid-area: footer;
   }
 }

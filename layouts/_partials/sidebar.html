@@ -5,22 +5,22 @@
   {{- $discussionClass = "nav__link--disable" -}}
 {{- end -}}
 
-<header class="sidebar">
+<header class="sidebar" id="sidebar">
   <nav class="sidebar__header">
     <a href="{{ relURL site.BaseURL }}" class="brand">
       <img src="{{ relURL site.Params.logo }}" alt="Logo {{ site.Title }}" class="brand__logo">
       <em class="brand__title">{{ site.Title }}</em>
     </a>
 
-    <button data-sidebar="sidebar">
-      {{ partial "components/icon" (dict "name" "x") }}
+    <button data-sidebar="sidebar" class="sidebar__btn-close">
+      {{ partial "components/icon" (dict "name" "x" "class" "sidebar__btn-icon") }}
     </button>
   </nav>
   
   <div class="search-bar">
     <label class="search-form">
       <span class="sr-only">Search</span>
-      <input type="search" name="searchInput" id="searchInput" class="search-form__input">
+      <input type="search" name="searchInput" id="searchInput" class="search-form__input" placeholder="Search...">
     </label>
     <nav class="search-results"></nav>
   </div>
@@ -28,7 +28,7 @@
   {{ with site.Params.menus }}
   {{ range sort . "weight" }}
     <div class="nav">
-      <strong class="nav__title">{{ .label }}</strong>
+      <strong class="nav__label">{{ .label }}</strong>
       <nav class="nav__list">
         {{ range sort .items "weight" }}
         <a 
