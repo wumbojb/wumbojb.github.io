@@ -1,0 +1,390 @@
+python:
+  - "print('Hello World')"
+  - |
+    for i in range(5):
+        print(i)
+  - |
+    # List comprehension
+    squares = [x**2 for x in range(10)]
+    print(squares)
+
+    # File handling
+    with open('file.txt', 'w') as f:
+        f.write('Hello File!')
+
+    # Class example
+    class Person:
+        def __init__(self, name, age):
+            self.name = name
+            self.age = age
+        
+        def greet(self):
+            return f"Hello, I'm {self.name}"
+
+    p = Person("Alice", 30)
+    print(p.greet())
+  
+bash:
+  - "echo Hello World"
+  - |
+    for f in *.txt; do
+        echo $f
+    done
+
+javascript:
+  - "console.log('Hello World');"
+  - |
+    function greet(name) {
+      console.log(`Hello, ${name}`);
+    }
+    greet('John Doe');
+  - |
+    // Arrow function
+    const multiply = (a, b) => a * b;
+    console.log(multiply(5, 3));
+
+    // Async/await
+    async function fetchData() {
+        try {
+            const response = await fetch('https://api.example.com/data');
+            const data = await response.json();
+            console.log(data);
+        } catch (error) {
+            console.error('Error:', error);
+        }
+    }
+
+    // Array methods
+    const numbers = [1, 2, 3, 4, 5];
+    const doubled = numbers.map(n => n * 2);
+    console.log(doubled);
+  
+go:
+  - |
+    package main
+    import "fmt"
+    func main() {
+        fmt.Println("Hello World")
+    }
+c:
+  - |
+    #include <stdio.h>
+    int main() {
+        printf("Hello World");
+        return 0;
+    }
+cpp:
+  - |
+    #include <iostream>
+    #include <vector>
+    using namespace std;
+
+    // Template function
+    template <typename T>
+    T max(T a, T b) {
+        return (a > b) ? a : b;
+    }
+
+    int main() {
+        cout << "Hello C++!" << endl;
+        
+        // Vector example
+        vector<int> numbers = {1, 2, 3, 4, 5};
+        for (int num : numbers) {
+            cout << num << " ";
+        }
+        
+        return 0;
+    }
+
+    // Class with inheritance
+    class Shape {
+    public:
+        virtual double area() = 0; // Pure virtual function
+    };
+
+    class Circle : public Shape {
+    private:
+        double radius;
+    public:
+        Circle(double r) : radius(r) {}
+        double area() override {
+            return 3.14159 * radius * radius;
+        }
+    };
+
+java:
+  - |
+    public class Main {
+        public static void main(String[] args) {
+            System.out.println("Hello Java!");
+            
+            // ArrayList example
+            ArrayList<String> names = new ArrayList<>();
+            names.add("Alice");
+            names.add("Bob");
+            names.add("Charlie");
+            
+            for (String name : names) {
+                System.out.println(name);
+            }
+        }
+    }
+
+    // Interface example
+    interface Animal {
+        void makeSound();
+    }
+
+    class Dog implements Animal {
+        public void makeSound() {
+            System.out.println("Woof!");
+        }
+    }
+
+php:
+  - |
+    <?php
+    // Basic syntax
+    echo "Hello PHP!\n";
+
+    // Array manipulation
+    $fruits = ["apple", "banana", "orange"];
+    array_push($fruits, "grape");
+    print_r($fruits);
+
+    // Class example
+    class Database {
+        private $connection;
+        
+        public function __construct($host, $user, $pass) {
+            $this->connection = new mysqli($host, $user, $pass);
+        }
+        
+        public function query($sql) {
+            return $this->connection->query($sql);
+        }
+    }
+
+    // Function with type hinting
+    function calculateSum(int $a, int $b): int {
+        return $a + $b;
+    }
+    ?>
+
+ruby:
+  - |
+    # Basic syntax
+    puts "Hello Ruby!"
+
+    # Block example
+    5.times do |i|
+      puts "Number: #{i}"
+    end
+
+    # Class with metaprogramming
+    class Person
+      attr_accessor :name, :age
+      
+      def initialize(name, age)
+        @name = name
+        @age = age
+      end
+      
+      def introduce
+        "Hi, I'm #{@name} and I'm #{@age} years old"
+      end
+    end
+
+    person = Person.new("Alice", 25)
+    puts person.introduce
+
+    # Hash example
+    colors = {red: "#FF0000", green: "#00FF00", blue: "#0000FF"}
+    colors.each do |name, code|
+      puts "#{name}: #{code}"
+    end
+
+swift:
+  - |
+    import Foundation
+
+    // Basic syntax
+    print("Hello Swift!")
+
+    // Optional handling
+    var optionalString: String? = "Hello"
+    if let unwrappedString = optionalString {
+        print(unwrappedString)
+    }
+
+    // Struct example
+    struct Point {
+        var x: Double
+        var y: Double
+        
+        func distance(to other: Point) -> Double {
+            return sqrt(pow(x - other.x, 2) + pow(y - other.y, 2))
+        }
+    }
+
+    let point1 = Point(x: 0, y: 0)
+    let point2 = Point(x: 3, y: 4)
+    print(point1.distance(to: point2))
+
+    // Protocol example
+    protocol Drawable {
+        func draw()
+    }
+
+    class Circle: Drawable {
+        func draw() {
+            print("Drawing a circle")
+        }
+    }
+
+rust:
+  - |
+    fn main() {
+        println!("Hello Rust!");
+        
+        // Ownership example
+        let s1 = String::from("hello");
+        let s2 = s1; // s1 is moved to s2
+        println!("{}", s2);
+        
+        // Pattern matching
+        let number = Some(5);
+        match number {
+            Some(n) if n < 0 => println!("Negative"),
+            Some(n) if n > 0 => println!("Positive"),
+            Some(0) => println!("Zero"),
+            None => println!("No number"),
+            _ => (),
+        }
+    }
+
+    // Struct with implementation
+    struct Rectangle {
+        width: u32,
+        height: u32,
+    }
+
+    impl Rectangle {
+        fn area(&self) -> u32 {
+            self.width * self.height
+        }
+        
+        fn square(size: u32) -> Rectangle {
+            Rectangle {
+                width: size,
+                height: size,
+            }
+        }
+    }
+
+kotlin:
+  - |
+    fun main() {
+        println("Hello Kotlin!")
+        
+        // Null safety
+        var nullableString: String? = null
+        println(nullableString?.length ?: "String is null")
+        
+        // Data class
+        data class User(val name: String, val age: Int)
+        val user = User("Alice", 30)
+        println(user)
+        
+        // Extension function
+        fun String.addExcitement(): String = "$this!"
+        println("Hello".addExcitement())
+    }
+
+    // Higher-order function
+    fun calculate(a: Int, b: Int, operation: (Int, Int) -> Int): Int {
+        return operation(a, b)
+    }
+
+    val result = calculate(10, 5) { x, y -> x + y }
+    println(result)
+
+typescript:
+  - |
+    // Type annotations
+    interface User {
+        id: number;
+        name: string;
+        email: string;
+    }
+
+    function createUser(user: User): User {
+        return {
+            ...user,
+            id: Date.now()
+        };
+    }
+
+    // Generic function
+    function identity<T>(arg: T): T {
+        return arg;
+    }
+
+    // Async/await with types
+    async function getUserData(userId: number): Promise<User> {
+        const response = await fetch(`/api/users/${userId}`);
+        const data = await response.json();
+        return data as User;
+    }
+
+    // Class with access modifiers
+    class Animal {
+        private name: string;
+        
+        constructor(name: string) {
+            this.name = name;
+        }
+        
+        public speak(): void {
+            console.log(`${this.name} makes a sound`);
+        }
+    }
+
+sql:
+  - |
+    -- Basic SELECT
+    SELECT * FROM users WHERE age > 18;
+
+    -- JOIN example
+    SELECT u.name, o.order_date, o.total_amount
+    FROM users u
+    INNER JOIN orders o ON u.id = o.user_id
+    WHERE u.country = 'USA';
+
+    -- Subquery
+    SELECT name, email
+    FROM users
+    WHERE id IN (
+        SELECT user_id FROM orders 
+        WHERE order_date > '2023-01-01'
+    );
+
+    -- Window function
+    SELECT 
+        name,
+        department,
+        salary,
+        AVG(salary) OVER (PARTITION BY department) as avg_department_salary
+    FROM employees;
+
+    -- CTE (Common Table Expression)
+    WITH top_customers AS (
+        SELECT user_id, SUM(total_amount) as total_spent
+        FROM orders
+        GROUP BY user_id
+        HAVING SUM(total_amount) > 1000
+    )
+    SELECT u.name, tc.total_spent
+    FROM users u
+    JOIN top_customers tc ON u.id = tc.user_id;
