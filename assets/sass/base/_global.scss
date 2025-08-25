@@ -5,6 +5,9 @@ html {
   @include m.custom-scrollbar(var(--base-border), var(--primary));
   font-size: v.$fs-base;
   font-family: v.$font-sans;
+  background-color: var(--second-bg);
+  color: var(--base-color);
+  overflow-x: hidden;
 }
 
 .sr-only {

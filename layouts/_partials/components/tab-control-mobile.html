@@ -35,15 +35,15 @@
           Edit Page
         </a>
       {{ else }}
-        {{ template "disable_edit_page_button" . }}
+        {{ template "disable_edit_page_button_desktop" . }}
       {{ end }}
     {{ else }}
-      {{ template "disable_edit_page_button" . }}
+      {{ template "disable_edit_page_button_desktop" . }}
     {{ end }}
   </nav>
 </div>
 
-{{ define "disable_edit_page_button" }}
+{{ define "disable_edit_page_button_desktop" }}
   <button class="nav__link nav__link--disable" title="Source Not Found or Disable on This Page">
     View Source
   </button>

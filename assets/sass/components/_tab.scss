@@ -3,37 +3,55 @@
 @use "../abstracts/variables" as v;
 
 .tab-control {
-  @include m.flex-justify(space-between, center);
-  border-bottom: 1px solid var(--base-border);
-  margin-top: 2rem;
+  display: none;
+}
 
-  &__col {
-    @include m.flex-justify(start, center);
-    margin-block-end: -1px;
+@include b.min(md) {
+  .tab-control {
+    @include m.flex-justify(space-between, center);
+    border-bottom: 1px solid var(--base-border);
+    margin-top: 2rem;
 
-    &--start {
-      margin-inline-start: -1px;
+    &__col {
+      @include m.flex-justify(start, center);
+      margin-block-end: -1px;
+
+      &--start {
+        margin-inline-start: -1px;
+      }
+
+      &--end {
+        margin-inline-end: -1px;
+      }
     }
 
-    &--end {
+    &__btn {
+      z-index: 2000;
       margin-inline-end: -1px;
+      border-inline: 1px solid var(--base-border);
+      padding: 0.25rem 1.5rem;
+      background: linear-gradient(
+        0deg,
+        var(--primary) 0%,
+        var(--primary-bg) 15%,
+        var(--base-bg) 100%
+      );
+      font-size: v.$fs-sm;
+
+      &--is-active {
+        background: var(--base-bg);
+      }
+
+      &--disable {
+        color: var(--danger);
+      }
     }
   }
-
-  &__btn {
-    border: 1px solid var(--base-border);
-    padding: 0.25rem 1rem;
-    margin-inline-start: -1px;
+  .tab-pane {
+    display: none;
 
     &--is-active {
-      border-block-end-color: var(--base-bg);
+      display: block;
     }
-  }
-}
-.tab-pane {
-  display: none;
-
-  &--is-active {
-    display: block;
   }
 }

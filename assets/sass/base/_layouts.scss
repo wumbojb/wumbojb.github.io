@@ -153,6 +153,7 @@ footer {
     position: relative;
     height: max-content;
     border: none;
+    transition: none;
 
     .nav--mobile-only, 
     &__btn-close {
