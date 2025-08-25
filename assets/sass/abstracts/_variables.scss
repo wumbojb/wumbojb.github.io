@@ -28,7 +28,7 @@ $font-system: sans-serif;
 $font-mono-system: monospace;
 
 $font-sans: sans-serif;
-$font-serif: serif;
+$font-serif: 'Linux Libertine','Georgia','Times',serif;
 $font-mono: monospace;
 
 /* 
@@ -57,7 +57,7 @@ $scale-ratio: 1.067;
       math.div(math.round($fs-base * pow($scale-ratio, $step) * 100), 100),
       $fs-base
     ) *
-    1rem;
+    1em;
 }
 
 $fs-xs: scale(-4);

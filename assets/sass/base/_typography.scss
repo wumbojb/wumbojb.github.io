@@ -14,27 +14,35 @@
   hyphens: auto;
   padding: 1rem;
 
+  #viewPage {
+    font-size: 14px;
+  }
+
   :is(h1, h2, h3, h4, h5, h6) {
     color: var(--second-color);
-    margin-block: 1.5rem 2rem;
-    font-weight: 600;
     line-height: 1.75;
   }
 
-  :is(h1, h2, h3) {
+  :is(h1, h2) {
     border-block-end: 1px solid var(--second-border);
+    font-family: v.$font-serif;
   }
 
   h1 {
-    font-size: v.$fs-5xl;
+    font-size: v.$fs-10xl;
   }
 
-  :is(h2, h3) {
+  h2 {
+    font-size: v.$fs-8xl;
+  }
+
+  :is(h2, h3, h4, h5, h6) {
+    margin-block: 2rem 1.5rem;
+  }
+
+  :is(h3, h4, h5, h6) {
     font-size: v.$fs-3xl;
-  }
-
-  :is(h4, h5, h6) {
-    font-size: v.$fs-xl;
+    font-weight: bold;
   }
 
   p {
@@ -50,7 +58,8 @@
     }
   }
 
-  .link-broken, .broken-link {
+  .link-broken,
+  .broken-link {
     color: var(--danger);
     cursor: not-allowed;
   }
@@ -75,50 +84,6 @@
   :is(ul ul, ol ol, ul ol, ol ul) {
     margin: 0.5rem 0;
     padding-inline-start: 2rem;
-  }
-
-  .table-container {
-    @include m.custom-scrollbar(var(--base-border), var(--primary));
-    -webkit-overflow-scrolling: touch;
-    overflow-x: auto;
-    margin: 1.5rem 0;
-    border-radius: 0.25rem;
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      min-width: 65ch;
-      background-color: var(--base-bg);
-    }
-
-    thead {
-      background-color: var(--second-bg);
-    }
-
-    th {
-      text-align: start;
-      padding: 1rem 1.5rem;
-      font-weight: 600;
-      color: var(--third-color);
-      border-block-end: 2px solid var(--base-border);
-      white-space: nowrap;
-    }
-
-    td {
-      padding: 1rem 1.5rem;
-      border-block-end: 2px solid var(--base-border);
-      color: var(--color-text-muted);
-      white-space: nowrap;
-    }
-
-    tbody tr:hover {
-      background-color: var(--second-bg);
-      transition: background-color 0.2s ease-in-out;
-    }
-
-    tbody tr:nth-child(even) {
-      background-color: var(--second-bg);
-    }
   }
 
   hr {
@@ -164,31 +129,89 @@
     border-inline-start: 3px solid var(--primary-border);
   }
 
-  .blockquote {
-    margin-block: 1.5rem;
-    padding-inline-start: 1rem;
-    color: var(--third-color);
-    border-inline-start-width: 0.25rem;
-    border-inline-start-color: var(--primary);
-    quotes: "“" "”" "‘" "’";
-    font-style: italic;
-    font-family: v.$font-serif;
-    font-weight: 600;
-
-    p:first-of-type::before {
-      content: open-quote;
-    }
-
-    p:last-of-type::after {
-      content: close-quote;
-    }
-
-    p:first-of-type::before,
-    p:last-of-type::after {
-      font-size: v.$fs-2xl;
-    }
-  }
-  @include b.min(md){
+  @include b.min(md) {
     padding: 2rem;
+  }
+}
+
+// TABLE
+.table-container {
+  @include m.custom-scrollbar(var(--base-border), var(--primary));
+  -webkit-overflow-scrolling: touch;
+  overflow-x: auto;
+  margin: 1.5rem 0;
+  border-radius: 0.25rem;
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 65ch;
+    background-color: var(--base-bg);
+  }
+
+  thead {
+    background-color: var(--second-bg);
+  }
+
+  th {
+    text-align: start;
+    padding: 1rem 1.5rem;
+    font-weight: 600;
+    color: var(--third-color);
+    border-block-end: 2px solid var(--base-border);
+    white-space: nowrap;
+  }
+
+  td {
+    padding: 1rem 1.5rem;
+    border-block-end: 2px solid var(--base-border);
+    color: var(--color-text-muted);
+    white-space: nowrap;
+  }
+
+  tbody tr:hover {
+    background-color: var(--second-bg);
+    transition: background-color 0.2s ease-in-out;
+  }
+
+  tbody tr:nth-child(even) {
+    background-color: var(--second-bg);
+  }
+}
+
+// BLOCKQUOTE
+.blockquote {
+  margin-block: 1.5rem;
+  padding-inline-start: 1rem;
+  color: var(--third-color);
+  border-inline-start-width: 0.25rem;
+  border-inline-start-color: var(--primary);
+  quotes: "“" "”" "‘" "’";
+  font-style: italic;
+  font-family: v.$font-serif;
+  font-weight: 600;
+
+  p:first-of-type::before {
+    content: open-quote;
+  }
+
+  p:last-of-type::after {
+    content: close-quote;
+  }
+
+  p:first-of-type::before,
+  p:last-of-type::after {
+    font-size: v.$fs-2xl;
+  }
+}
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+
+  #viewPage,
+  #viewPage * {
+    visibility: visible;
   }
 }
