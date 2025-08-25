@@ -18,8 +18,6 @@ mathjax: false
 draft: false
 ---
 
-## 📌 Callout Usage Guide  
-
 Callouts are used to provide annotations or highlight important information in notes without disrupting the main text flow. This feature is inspired by [Obsidian](https://obsidian.md/) and can be used for various purposes such as info, warnings, tips, and code examples.  
 
 ### ✨ How to Use Callouts  
