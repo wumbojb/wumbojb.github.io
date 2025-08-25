@@ -1,5 +1,6 @@
 @use "../abstracts/variables" as v;
 @use "../abstracts/mixins" as m;
+@use "../abstracts/breakpoints" as b;
 
 :where(.markdown) {
   color: var(--base-color);
@@ -163,7 +164,7 @@
     border-inline-start: 3px solid var(--primary-border);
   }
 
-  blockquote {
+  .blockquote {
     margin-block: 1.5rem;
     padding-inline-start: 1rem;
     color: var(--third-color);
@@ -186,5 +187,8 @@
     p:last-of-type::after {
       font-size: v.$fs-2xl;
     }
+  }
+  @include b.min(md){
+    padding: 2rem;
   }
 }

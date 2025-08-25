@@ -1,0 +1,53 @@
+{{- /*  DISCUSSION DEACTIVE CLASS  */ -}}
+{{- $discussionFalse := (not (.Params.discussion | default site.Params.defaultDiscussion | default true)) -}}
+{{- $discussionClass := "" -}}
+{{- if $discussionFalse -}}
+  {{- $discussionClass = "nav__link--disable" -}}
+{{- end -}}
+
+{{- $repo := site.Params.ghrepo | default "user/repo" -}}
+{{- $branch := site.Params.branch | default "main" -}}
+{{- $repoBasePath := .Params.repoBasePath | default "content" -}}
+{{- $enableEdit := .Params.editPage | default site.Params.defaultEditPage | default true -}}
+
+<div class="nav nav--mobile-only">
+  <strong class="nav__label">Content</strong>
+  <nav class="nav__list">
+    <button data-tab="viewPage" class="nav__link">Page</button>
+    <button data-tab="viewDiscussion" class="nav__link {{ $discussionClass }}">Discussion</button>
+    <button data-tab="viewHistory" class="nav__link">History</button>
+    {{ if $enableEdit }}
+      {{ with .File }}
+        <a 
+          href="https://github.com/{{- $repo -}}/blob/{{- $branch -}}/{{- $repoBasePath -}}/{{- .Path -}}?plain=1" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="nav__link"
+        >
+          View Source
+        </a>
+        <a 
+          href="https://github.com/{{- $repo -}}/edit/{{- $branch -}}/{{- $repoBasePath -}}/{{- .Path -}}?plain=1" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="nav__link"
+        >
+          Edit Page
+        </a>
+      {{ else }}
+        {{ template "disable_edit_page_button" . }}
+      {{ end }}
+    {{ else }}
+      {{ template "disable_edit_page_button" . }}
+    {{ end }}
+  </nav>
+</div>
+
+{{ define "disable_edit_page_button" }}
+  <button class="nav__link nav__link--disable" title="Source Not Found or Disable on This Page">
+    View Source
+  </button>
+  <button class="nav__link nav__link--disable" title="File Not Found or Disable on This Page">
+    Edit Page
+  </button>
+{{ end }}

@@ -1,0 +1,39 @@
+@use "../abstracts/breakpoints" as b;
+@use "../abstracts/mixins" as m;
+@use "../abstracts/variables" as v;
+
+.tab-control {
+  @include m.flex-justify(space-between, center);
+  border-bottom: 1px solid var(--base-border);
+  margin-top: 2rem;
+
+  &__col {
+    @include m.flex-justify(start, center);
+    margin-block-end: -1px;
+
+    &--start {
+      margin-inline-start: -1px;
+    }
+
+    &--end {
+      margin-inline-end: -1px;
+    }
+  }
+
+  &__btn {
+    border: 1px solid var(--base-border);
+    padding: 0.25rem 1rem;
+    margin-inline-start: -1px;
+
+    &--is-active {
+      border-block-end-color: var(--base-bg);
+    }
+  }
+}
+.tab-pane {
+  display: none;
+
+  &--is-active {
+    display: block;
+  }
+}

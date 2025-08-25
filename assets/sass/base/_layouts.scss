@@ -123,7 +123,12 @@
   }
 }
 
-@include b.min(lg) {
+footer {
+  padding-block: 1rem 8rem;
+  padding-inline: 2rem;
+}
+
+@include b.min(md) {
   body {
     display: grid;
     grid-template-columns: 200px minmax(0, 1fr);
@@ -134,6 +139,7 @@
     grid-template-rows: repeat(3, minmax(0, auto));
     max-width: 1400px;
     margin: 0 auto;
+    background-color: var(--second-bg);
   }
 
   .header {
@@ -144,15 +150,22 @@
     grid-area: sidebar;
     visibility: visible;
     inset-inline-start: 0;
+    position: relative;
+    height: max-content;
+    border: none;
 
+    .nav--mobile-only, 
     &__btn-close {
       display: none;
     }
   }
 
-  .markdown {
+  .main {
     grid-area: main;
-    padding: 2rem;
+    background-color: var(--base-bg);
+    border: 1px solid var(--base-border);
+    border-inline-end: none;
+    border-block-start: none;
   }
 
   .footer {

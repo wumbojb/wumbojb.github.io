@@ -44,14 +44,6 @@
     </div>
   {{ end }}
   {{ end }}
-
-  <div class="nav">
-    <strong class="nav__label">Content</strong>
-    <nav class="nav__list">
-      <button data-tab="viewContent" class="nav__link">Page</button>
-      <button data-tab="viewDiscussion" class="nav__link {{ $discussionClass }}">Discussion</button>
-      {{ partial "components/github-link" . }}
-    </nav>
-  </div>
+  {{ partial "components/tab-control-mobile" . }}
   {{ partial "components/theme-setting" . }}
 </header>

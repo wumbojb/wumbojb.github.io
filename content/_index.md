@@ -1,8 +1,8 @@
 ---
-titiel: Home
+title: Home Page
 ---
 
-Aute ullamco minim est enim reprehenderit dolore nostrud occaecat ex minim dolor ullamco deserunt id. Labore consectetur ipsum eu dolor ad pariatur culpa nulla aliquip esse laborum sunt incididunt irure. Cupidatat dolor qui reprehenderit dolor aute minim excepteur aliqua.
+Aute ullamco minim est enim reprehenderit dolore nostrud occaecat ex minim dolor ullamco deserunt id. Labore consectetur ipsum eu dolor ad pariatur culpa nulla aliquip esse laborum sunt incididunt irure. Cupidatat dolor qui reprehenderit dolor aute minim excepteur aliqua. [Callout Example](/callout/)
 
 [Learning Deep Rapid Effective Odyssey](/posts/learning-deep-rapid-effective-odyssey)
 

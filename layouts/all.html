@@ -26,13 +26,16 @@
 <body>
   {{ partial "header" . }}
   {{ partial "sidebar" . }}
-  <main class="markdown">
-    <article class="tab-pane tab-pane--is-active">
-      {{ partial "components/main" . }}
-      {{ partial "components/taxonomy-term" . }}
-    </article>
-    <aside class="tab-pane">{{ partial "components/discussion" }}</aside>
-    <aside class="tab-pane">{{ partial "components/history" . }}</aside>
+  <main class="main">
+    {{ partial "components/tab-control-desktop" . }}
+    <div class="markdown">
+      <article class="tab-pane tab-pane--is-active" id="viewPage">
+        {{ partial "components/main" . }}
+        {{ partial "components/taxonomy-term" . }}
+      </article>
+      <aside class="tab-pane" id="viewDiscussion">{{ partial "components/discussion" }}</aside>
+      <aside class="tab-pane" id="viewHistory">{{ partial "components/history" . }}</aside>
+    </div>
   </main>
   {{ partial "footer" . }}
 </body>
