@@ -17,12 +17,16 @@
     </button>
   </nav>
   
-  <div class="search-bar">
+  <div class="search-bar" data-search="{{ "search.json" | relURL }}">
     <label class="search-form">
       <span class="sr-only">Search</span>
       <input type="search" name="searchInput" id="searchInput" class="search-form__input" placeholder="Search...">
     </label>
-    <nav class="search-results"></nav>
+  </div>
+
+  <div class="nav" id="searchContainerResults" hidden>
+    <strong class="nav__label">Results</strong>
+    <nav class="nav__list" id="results"></nav>
   </div>
 
   {{ with site.Params.menus }}

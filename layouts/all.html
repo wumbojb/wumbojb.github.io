@@ -13,8 +13,9 @@
         <h1>{{ .Title }}</h1>
         {{ .Content }}
         {{ partial "components/taxonomy-term" . }}
+        {{ partial "components/recent-change" . }}
       </article>
-      <aside class="tab-pane" id="viewDiscussion">{{ partial "components/discussion" }}</aside>
+      <aside class="tab-pane" id="viewDiscussion">{{ partial "components/discussion" . }}</aside>
       <aside class="tab-pane" id="viewHistory">{{ partial "components/history" . }}</aside>
     </div>
   </main>

@@ -1,10 +1,10 @@
-import { $, $$, byId, getLocalStorage, setLocalStorage } from "js/helper";
+import { $, $$, getLocalStorage, setLocalStorage } from "js/helper";
 
 const KEY_FONT_SIZE = "site:font-size";
 
 const applyFontSize = (size) => {
-  const viewPage = byId("viewPage");
-  viewPage.style.setProperty("--md-font-default", `${size}px`);
+  const elHtml = document.documentElement;
+  elHtml.style.setProperty("--md-font-default", `${size}px`);
   const radio = $(`input[name="font-size"][value="${size}"]`);
   if (radio) radio.checked = true;
   setLocalStorage(KEY_FONT_SIZE, size);

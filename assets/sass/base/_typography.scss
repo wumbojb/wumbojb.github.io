@@ -12,10 +12,9 @@
   word-break: normal;
   overflow-wrap: anywhere;
   hyphens: auto;
-  padding: 1rem;
+  padding: 1em;
   
   #viewPage {
-    --md-font-default: 14px;
     font-size: var(--md-font-default);
   }
 
@@ -38,7 +37,7 @@
   }
 
   :is(h2, h3, h4, h5, h6) {
-    margin-block: 2rem 1.5rem;
+    margin-block: 2em 1.5em;
   }
 
   :is(h3, h4, h5, h6) {
@@ -47,7 +46,7 @@
   }
 
   p {
-    margin-block: 1rem 1.5rem;
+    margin-block: 1em 1.5em;
   }
 
   a {
@@ -66,8 +65,8 @@
   }
 
   :is(ul, ol) {
-    padding-inline-start: 2rem;
-    margin: 1.5rem 0;
+    padding-inline-start: 2em;
+    margin: 1.5em 0;
   }
 
   ul {
@@ -79,16 +78,16 @@
   }
 
   :is(ul li, ol li) {
-    margin: 0.5rem 0;
+    margin: 0.5em 0;
   }
 
   :is(ul ul, ol ol, ul ol, ol ul) {
-    margin: 0.5rem 0;
-    padding-inline-start: 2rem;
+    margin: 0.5em 0;
+    padding-inline-start: 2em;
   }
 
   hr {
-    margin-block: 3rem;
+    margin-block: 3em;
     display: block;
     border: none;
     width: 100%;
@@ -97,10 +96,10 @@
   }
 
   mark {
-    padding-inline: 0.25rem;
-    border-radius: 0.25rem;
+    padding-inline: 0.25em;
+    border-radius: 0.25em;
     border: 1px solid var(--base-border);
-    margin-inline: 0.25rem;
+    margin-inline: 0.25em;
   }
 
   del {
@@ -113,25 +112,25 @@
   }
 
   dl {
-    margin-block: 1.75rem;
+    margin-block: 1.75em;
   }
 
   dt {
-    padding-block-end: 0.25rem;
+    padding-block-end: 0.25em;
     font-weight: 600;
     color: var(--second-color);
     border-block-end: 1px dashed var(--third-border);
   }
 
   dd {
-    margin: 0.5rem;
-    padding-inline-start: 1rem;
+    margin: 0.5em;
+    padding-inline-start: 1em;
     color: var(--third-color);
     border-inline-start: 3px solid var(--primary-border);
   }
 
   @include b.min(md) {
-    padding: 2rem;
+    padding: 2em;
   }
 }
 
@@ -140,8 +139,8 @@
   @include m.custom-scrollbar(var(--base-border), var(--primary));
   -webkit-overflow-scrolling: touch;
   overflow-x: auto;
-  margin: 1.5rem 0;
-  border-radius: 0.25rem;
+  margin: 1.5em 0;
+  border-radius: 0.25em;
 
   table {
     width: 100%;
@@ -156,7 +155,7 @@
 
   th {
     text-align: start;
-    padding: 1rem 1.5rem;
+    padding: 1em 1.5em;
     font-weight: 600;
     color: var(--third-color);
     border-block-end: 2px solid var(--base-border);
@@ -164,7 +163,7 @@
   }
 
   td {
-    padding: 1rem 1.5rem;
+    padding: 1em 1.5em;
     border-block-end: 2px solid var(--base-border);
     color: var(--color-text-muted);
     white-space: nowrap;
@@ -182,10 +181,10 @@
 
 // BLOCKQUOTE
 .blockquote {
-  margin-block: 1.5rem;
-  padding-inline-start: 1rem;
+  margin-block: 1.5em;
+  padding-inline-start: 1em;
   color: var(--third-color);
-  border-inline-start-width: 0.25rem;
+  border-inline-start-width: 0.25em;
   border-inline-start-color: var(--primary);
   quotes: "“" "”" "‘" "’";
   font-style: italic;

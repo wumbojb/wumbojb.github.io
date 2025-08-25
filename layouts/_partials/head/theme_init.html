@@ -1,3 +1,16 @@
 <script>
-  console.log("HELLO WORLD")
+  (async () => {
+    const elHtml = document.documentElement;
+    const systemTheme = window.matchMedia("(prefers-color-scheme: dark)")
+      .matches
+      ? "dark"
+      : "light";
+    const gtFs = localStorage.getItem("site:font-size");
+    if(!gtFs) elHtml.style.setProperty("--md-font-default", `14px`);
+    else elHtml.style.setProperty("--md-font-default", `${gtFs}px`);
+
+    const gtTheme = localStorage.getItem("site:theme");
+    if (!gtTheme) elHtml.dataset.theme = systemTheme;
+    else elHtml.dataset.theme = gtTheme === "auto" ? systemTheme : gtTheme;
+  })();
 </script>
