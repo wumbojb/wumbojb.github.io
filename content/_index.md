@@ -15,34 +15,21 @@ __Advertisement :)__
 
 You will like those projects!
 
-{{% col-begin cols="2" %}}
-{{% col-item item="card" %}}
-{{< figure 
-    src="assets/images/default-image.webp" 
-    alt="Deskripsi alternatif" 
-    caption="Ini caption [contoh](/callout/)" 
-    title="Judul Figure" 
-    class="custom-class" 
-    link="https://example.com" 
-    target="_blank" 
-    rel="noopener" 
-    width="600" 
-    height="400" 
-    loading="lazy"
->}}
-{{% /col-item %}}
-{{% card %}}
+{{% figure 
+  src="/assets/images/default-image.webp"
+  alt="Deskripsi alternatif"
+  link="https://example.com"
+  float="right"
+  width="400"
+  height="200"
+  loading="lazy"
+%}}
+### This Is Title
+Dolor ea proident in adipisicing ex qui fugiat esse occaecat enim esse. Nisi exercitation sint reprehenderit nisi cillum et aliqua reprehenderit mollit elit labore. Dolore eiusmod ipsum pariatur aliqua occaecat nisi exercitation dolor enim. Esse nulla minim veniam nulla eiusmod nostrud eu magna ex labore. Minim ut laborum quis cupidatat sit consequat voluptate velit voluptate id amet irure. Magna veniam est Lorem ullamco enim dolore. Id ea aliquip nostrud amet consectetur in non amet tempor ex cupidatat do mollit aute.
 
-Culpa esse cillum consectetur est nulla in ad esse dolor voluptate labore anim. Nostrud enim eiusmod deserunt deserunt adipisicing esse enim culpa fugiat irure ut voluptate Lorem. Proident labore exercitation amet occaecat irure sint ut ea anim. Ad ea elit sunt cillum anim occaecat eu magna ea nostrud est nisi. Incididunt qui nulla nostrud cupidatat excepteur Lorem ut exercitation magna.
+Ini caption [contoh](/callout/) atau [Contoh Artilel](/artikel-lorem/)
+{{% /figure %}}
 
-{{% /card %}}
-
-{{% card %}}
-
-Culpa esse cillum consectetur est nulla in ad esse dolor voluptate labore anim. Nostrud enim eiusmod deserunt deserunt adipisicing esse enim culpa fugiat irure ut voluptate Lorem. Proident labore exercitation amet occaecat irure sint ut ea anim. Ad ea elit sunt cillum anim occaecat eu magna ea nostrud est nisi. Incididunt qui nulla nostrud cupidatat excepteur Lorem ut exercitation magna.
-
-{{% /card %}}
-{{% /col-begin %}}
 ---
 
 # h1 Heading 8-)

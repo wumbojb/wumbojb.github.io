@@ -1,5 +1,3 @@
-{{ $style := .Get "item" | default "" }}
-
-<div class="col-item col-item--{{ $style }}">
-  {{ .Inner }}
+<div class="col-item {{ with .Get "item" }}col-item--{{ . }}{{ end }}">
+  {{ .Inner | strings.TrimSpace | .Page.RenderString }}
 </div>
