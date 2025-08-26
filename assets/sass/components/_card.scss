@@ -9,18 +9,5 @@
   border-radius: 0.25rem;
   box-shadow: var(--base-shadow);
   max-width: 300px;
-
-  @include b.min(lg) {
-    &--left {
-      float: left;
-      margin-right: 1rem;
-      margin-bottom: 1rem;
-    }
-
-    &--right {
-      float: right;
-      margin-left: 1rem;
-      margin-bottom: 1rem;
-    }
-  }
+  background-color: var(--second-bg);
 }

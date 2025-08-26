@@ -7,6 +7,8 @@
   border: 1px solid var(--base-border);
   width: fit-content;
   max-width: 100%;
+  background-color: var(--second-bg);
+  box-shadow: var(--base-shadow);
 
   &__caption {
     padding-inline: 1rem;

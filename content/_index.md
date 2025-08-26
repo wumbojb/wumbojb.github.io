@@ -30,7 +30,6 @@ Dolor ea proident in adipisicing ex qui fugiat esse occaecat enim esse. Nisi exe
 Ini caption [contoh](/callout/) atau [Contoh Artilel](/artikel-lorem/)
 {{% /figure %}}
 
----
 
 # h1 Heading 8-)
 ## h2 Heading

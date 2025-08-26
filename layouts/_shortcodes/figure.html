@@ -16,16 +16,15 @@
     {{- if or (.Get "alt") (.Get "caption") }}
     alt="{{ with .Get "alt" }}{{ . }}{{ else }}{{ .Get "caption" | markdownify | plainify }}{{ end }}"
     {{- end -}}
-    {{- $width := .Get "width" -}}
-
-    {{- with $width }} width="{{ . }}"{{ end -}}
+    {{- $width := .Get "width" | default "600" -}}
+    width="{{ $width }}"
     {{- with .Get "height" }} height="{{ . }}"{{ end -}}
     {{- with .Get "loading" }} loading="{{ . }}"{{ end -}}
   ><!-- Closing img tag -->
   {{- if .Get "link" }}</a>{{ end -}}
 
 {{- with .Inner -}}
-<figcaption class="figure__caption" {{- with $width }}style="max-width: {{ . }}px"{{ end -}}>
+<figcaption class="figure__caption" style="max-width: {{ $width }}px">
   {{ . | safeHTML | markdownify }}
 </figcaption>
 {{- end -}}
