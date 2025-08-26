@@ -1,8 +1,4 @@
-import { $ } from "js/helper";
-
-const scAttr = (el, key, val) => {
-  el.setAttribute(key, val);
-};
+import { $, setAttr } from "js/helper";
 
 export const giscus = (theme) => {
   const container = $(".discussion");
@@ -13,17 +9,17 @@ export const giscus = (theme) => {
   script.src = "https://giscus.app/client.js";
 
   const data = container.dataset;
-  scAttr(script, "data-repo", data.repo);
-  scAttr(script, "data-repo-id", data.repoId);
-  scAttr(script, "data-category", data.category);
-  scAttr(script, "data-category-id", data.categoryId);
-  scAttr(script, "data-mapping", data.mapping);
-  scAttr(script, "data-strict", data.strict);
-  scAttr(script, "data-reactions-enabled", data.reactionsEnabled);
-  scAttr(script, "data-emit-metadata", data.emitMetadata);
-  scAttr(script, "data-input-position", data.inputPosition);
-  scAttr(script, "data-theme", theme);
-  scAttr(script, "data-lang", document.documentElement.lang || data.lang);
+  setAttr(script, "data-repo", data.repo);
+  setAttr(script, "data-repo-id", data.repoId);
+  setAttr(script, "data-category", data.category);
+  setAttr(script, "data-category-id", data.categoryId);
+  setAttr(script, "data-mapping", data.mapping);
+  setAttr(script, "data-strict", data.strict);
+  setAttr(script, "data-reactions-enabled", data.reactionsEnabled);
+  setAttr(script, "data-emit-metadata", data.emitMetadata);
+  setAttr(script, "data-input-position", data.inputPosition);
+  setAttr(script, "data-theme", theme);
+  setAttr(script, "data-lang", document.documentElement.lang || data.lang);
   script.crossOrigin = "anonymous";
   script.async = true;
 
