@@ -14,3 +14,14 @@
     else elHtml.dataset.theme = gtTheme === "auto" ? systemTheme : gtTheme;
   })();
 </script>
+<style>
+  .highlight code::after {
+    content: "📑 Copy";
+    cursor: copy;
+  }
+
+  .highlight.copied code::after {
+    content: "✅ Copied";
+    color: var(--success);
+  }
+</style>
