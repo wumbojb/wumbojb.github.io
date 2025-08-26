@@ -1,0 +1,3 @@
+<div class="col-item {{ with .Get "item" }}col-item--{{ . }}{{ end }}">
+  {{ .Inner | strings.TrimSpace | .Page.RenderString | markdownify }}
+</div>

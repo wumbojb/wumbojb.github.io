@@ -4,7 +4,7 @@
 
 :where(.markdown) {
   color: var(--base-color);
-  line-height: 1.65;
+  line-height: 1.7;
   max-width: 100%;
   font-weight: 400;
   width: 100%;
@@ -13,7 +13,7 @@
   overflow-wrap: anywhere;
   hyphens: auto;
   padding: 1em;
-  
+
   #viewPage {
     font-size: var(--md-font-default);
   }
@@ -36,13 +36,14 @@
     font-size: v.$fs-8xl;
   }
 
-  :is(h2, h3, h4, h5, h6) {
+  h2 {
     margin-block: 2em 1.5em;
   }
 
   :is(h3, h4, h5, h6) {
     font-size: v.$fs-3xl;
     font-weight: bold;
+    margin-block: 1.5em 1em;
   }
 
   p {
@@ -141,6 +142,7 @@
   overflow-x: auto;
   margin: 1.5em 0;
   border-radius: 0.25em;
+  border: 1px solid var(--base-border);
 
   table {
     width: 100%;
@@ -202,6 +204,40 @@
   p:first-of-type::before,
   p:last-of-type::after {
     font-size: v.$fs-2xl;
+  }
+}
+
+.details {
+  border: 1px solid var(--base-border);
+  padding: 0.5em 1rem;
+  background-color: var(--second-bg);
+  width: fit-content;
+  box-shadow: var(--base-shadow);
+  border-radius: 0.25em;
+
+  .summary {
+    @include m.flex-justify(space-between, center);
+    list-style: none;
+    gap: 2rem;
+
+    &::-moz-list-bullet {
+      display: none;
+    }
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+
+    &::after {
+      content: "[open]";
+      color: var(--primary);
+    }
+  }
+
+  &[open] {
+    .summary::after {
+      content: "[close]";
+    }
   }
 }
 

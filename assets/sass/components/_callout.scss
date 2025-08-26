@@ -2,20 +2,19 @@
   border: 1px solid var(--callout-border);
   background-color: var(--callout-bg);
   display: block;
-  margin: 1rem;
+  margin: 1em;
   box-shadow: var(--base-shadow);
 
   &__header {
     display: flex;
     align-items: center;
-    gap: 1rem;
-    padding: 1rem;
+    gap: 1em;
+    padding: 1em;
     border-block-end: 1px solid var(--callout-border);
     margin-block-end: -1px;
     color: var(--callout-color);
     cursor: pointer;
     user-select: none;
-
   }
 
   &__title {
@@ -23,6 +22,6 @@
   }
 
   &__body {
-    padding: 1rem;
+    padding: 1em;
   }
 }

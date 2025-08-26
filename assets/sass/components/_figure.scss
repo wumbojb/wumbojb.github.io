@@ -1,0 +1,17 @@
+@use "../abstracts/breakpoints" as b;
+@use "../abstracts/mixins" as m;
+@use "../abstracts/variables" as v;
+
+.figure {
+  display: block;
+  border: 1px solid var(--base-border);
+  width: fit-content;
+  max-width: 100%;
+  background-color: var(--second-bg);
+  box-shadow: var(--base-shadow);
+
+  &__caption {
+    padding-inline: 1em;
+    padding-block-end: 1em;
+  }
+}

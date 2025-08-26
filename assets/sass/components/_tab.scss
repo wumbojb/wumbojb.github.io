@@ -5,6 +5,13 @@
 .tab-control {
   display: none;
 }
+.tab-pane {
+  display: none;
+
+  &--is-active {
+    display: block;
+  }
+}
 
 @include b.min(md) {
   .tab-control {
@@ -45,13 +52,6 @@
       &--disable {
         color: var(--danger);
       }
-    }
-  }
-  .tab-pane {
-    display: none;
-
-    &--is-active {
-      display: block;
     }
   }
 }

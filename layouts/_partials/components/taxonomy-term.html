@@ -1,11 +1,9 @@
 {{ if eq .Kind "taxonomy" }}
-  <ul>
+  <nav class="col-begin col-begin--cols-4" style="margin-block-start: 1rem;">
     {{ range .Data.Terms.Alphabetical }}
-      <li>
-        <a href="{{ .Page.RelPermalink }}">{{ .Term }} ({{ .Count }})</a>
-      </li>
+      <a href="{{ .Page.RelPermalink }}">{{ .Term }} ({{ .Count }})</a>
     {{ end }}
-  </ul>
+  </nav>
 {{ else if eq .Kind "term" }}
   <div class="table-container">
     <table class="recent-changes-table">

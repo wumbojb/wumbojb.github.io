@@ -6,6 +6,8 @@ Aute ullamco minim est enim reprehenderit dolore nostrud occaecat ex minim dolor
 
 [Learning Deep Rapid Effective Odyssey](/posts/learning-deep-rapid-effective-odyssey)
 
+{{< toc >}}
+
 __Advertisement :)__
 
 - __[pica](https://nodeca.github.io/pica/demo/)__ - high quality and fast image
@@ -15,7 +17,21 @@ __Advertisement :)__
 
 You will like those projects!
 
----
+{{% figure 
+  src="/assets/images/default-image.webp"
+  alt="Deskripsi alternatif"
+  link="https://example.com"
+  float="right"
+  width="400"
+  height="200"
+  loading="lazy"
+%}}
+## This Is Title
+Dolor ea proident in adipisicing ex qui fugiat esse occaecat enim esse. Nisi exercitation sint reprehenderit nisi cillum et aliqua reprehenderit mollit elit labore. Dolore eiusmod ipsum pariatur aliqua occaecat nisi exercitation dolor enim. Esse nulla minim veniam nulla eiusmod nostrud eu magna ex labore. Minim ut laborum quis cupidatat sit consequat voluptate velit voluptate id amet irure. Magna veniam est Lorem ullamco enim dolore. Id ea aliquip nostrud amet consectetur in non amet tempor ex cupidatat do mollit aute.
+
+Ini caption [contoh](/callout/) atau [Contoh Artilel](/artikel-lorem/)
+{{% /figure %}}
+
 
 # h1 Heading 8-)
 ## h2 Heading

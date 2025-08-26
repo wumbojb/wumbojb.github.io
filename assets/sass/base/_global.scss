@@ -1,5 +1,6 @@
 @use "../abstracts/variables" as v;
 @use "../abstracts/mixins" as m;
+@use "../abstracts/breakpoints" as b;
 
 html {
   @include m.custom-scrollbar(var(--base-border), var(--primary));
@@ -19,4 +20,24 @@ html {
   display: inline-block;
   fill: currentColor;
   vertical-align: middle;
+}
+
+@include b.min(md) {
+  .float-left {
+    float: left;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .float-right {
+    float: right;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
 }

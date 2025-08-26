@@ -8,14 +8,6 @@ enableGitInfo: true
 enableEmoji: true
 
 #===================
-# PAGINATION SETTING
-#===================
-pagination:
-  disableAliases: false
-  pagerSize: 20
-  path: page
-
-#===================
 # GOOGLE ANALYTICS SETTING
 #===================
 services:
@@ -25,6 +17,7 @@ privacy:
   googleAnalytics:
     disable: false
     respectDoNotTrack: false
+
 #===================
 # PARAMS SETTING
 #===================

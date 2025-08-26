@@ -3,6 +3,28 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ printf "%s | %s" .Title site.Title }}{{ end }}</title>
 
+{{- $description := "" -}}
+{{- if .Params.description -}}
+  {{- $description = .Params.description | plainify | htmlEscape -}}
+{{- else -}}
+  {{- $description = .Summary | plainify | truncate 160 | htmlEscape -}}
+{{- end -}}
+
+<link rel="canonical" href="{{- .Permalink -}}" />
+<meta name="robots" content="index, follow" />
+<meta name="description" content="{{- $description -}}" />
+<meta name="author" content="{{- .Params.author | default site.Params.author -}}"/>
+{{- if .Params.tags -}}
+  <meta
+    name="keywords"
+    content="{{- with .Params.tags -}}
+      {{- delimit . ", " -}}
+    {{- else -}}
+      {{- $.Site.Params.keywords -}}
+    {{- end -}}"
+  />
+{{- end -}}
+
 {{- partial "head/ga" . -}}
 {{- partial "head/og" . -}}
 {{- partial "head/schema" . -}}

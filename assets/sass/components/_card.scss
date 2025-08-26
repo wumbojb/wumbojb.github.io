@@ -1,0 +1,13 @@
+@use "../abstracts/breakpoints" as b;
+@use "../abstracts/mixins" as m;
+@use "../abstracts/variables" as v;
+
+.card {
+  display: block;
+  padding: 1em;
+  border: 1px solid var(--base-border);
+  border-radius: 0.25rem;
+  box-shadow: var(--base-shadow);
+  max-width: 300px;
+  background-color: var(--second-bg);
+}
