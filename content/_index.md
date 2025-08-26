@@ -6,6 +6,8 @@ Aute ullamco minim est enim reprehenderit dolore nostrud occaecat ex minim dolor
 
 [Learning Deep Rapid Effective Odyssey](/posts/learning-deep-rapid-effective-odyssey)
 
+{{< toc >}}
+
 __Advertisement :)__
 
 - __[pica](https://nodeca.github.io/pica/demo/)__ - high quality and fast image

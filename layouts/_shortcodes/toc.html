@@ -1,0 +1,6 @@
+<details class="details">
+  <summary class="summary">Table Of Contents</summary>
+  {{ with .Page.TableOfContents }}
+    {{ . | safeHTML | markdownify }}
+  {{ end }}
+</details>

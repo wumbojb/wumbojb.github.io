@@ -4,9 +4,11 @@ title: Artikel Lorem
 
 Deserunt Lorem et proident ea commodo consequat labore incididunt nisi. Labore quis fugiat anim sunt quis ea nostrud quis consectetur excepteur nostrud. In culpa anim nulla ullamco sit est id et exercitation. Irure anim aute eu do qui culpa aute velit reprehenderit ipsum do aliqua aliquip exercitation. Proident est in pariatur enim minim velit amet labore. Mollit est esse ullamco nulla do ad pariatur reprehenderit labore amet.
 
+{{< toc >}}
+
 ## Lorem Ipsum
 
-{{% figure
+{{< figure
   src="/assets/images/default-image.webp"
   alt="Deskripsi alternatif"
   link="https://example.com"
@@ -14,7 +16,7 @@ Deserunt Lorem et proident ea commodo consequat labore incididunt nisi. Labore q
   width="400"
   height="200"
   loading="lazy"
-%}}
+>}}
 
 ### This Is Title
 
@@ -24,7 +26,7 @@ Ini caption [contoh](/callout/) atau [Contoh Artilel](/artikel-lorem/)
 
 {{< youtube id=0RKpf3rK57I start=30 end=60 loading=lazy >}}
 
-{{% /figure %}}
+{{< /figure >}}
 
 Deserunt irure eu esse sunt sint cupidatat non culpa. Duis culpa aute mollit adipisicing magna eiusmod in pariatur sint excepteur ipsum commodo eiusmod mollit. Labore consequat ullamco duis ea mollit commodo est ipsum aute labore. Dolor est pariatur esse ipsum consequat dolore adipisicing occaecat cupidatat enim ea do anim pariatur. Tempor eiusmod pariatur enim sit anim aliqua dolore elit minim duis cupidatat nostrud ut.
 {{% card float="right" %}}
