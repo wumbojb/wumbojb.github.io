@@ -22,19 +22,7 @@ Dolor ea proident in adipisicing ex qui fugiat esse occaecat enim esse.
 
 Ini caption [contoh](/callout/) atau [Contoh Artilel](/artikel-lorem/)
 
-| Option | Description                                                               |
-| ------ | ------------------------------------------------------------------------- |
-| data   | path to data files to supply the data that will be passed into templates. |
-| engine | engine to be used for processing templates. Handlebars is the default.    |
-| ext    | extension to be used for dest files.                                      |
-
-Right aligned columns
-
-| Option |                                                               Description |
-| -----: | ------------------------------------------------------------------------: |
-|   data | path to data files to supply the data that will be passed into templates. |
-| engine |    engine to be used for processing templates. Handlebars is the default. |
-|    ext |                                      extension to be used for dest files. |
+{{< youtube id=0RKpf3rK57I start=30 end=60 loading=lazy >}}
 
 {{% /figure %}}
 

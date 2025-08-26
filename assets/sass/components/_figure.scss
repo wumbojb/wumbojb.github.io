@@ -11,6 +11,7 @@
   box-shadow: var(--base-shadow);
 
   &__caption {
-    padding-inline: 1rem;
+    padding-inline: 1em;
+    padding-block-end: 1em;
   }
 }

@@ -130,6 +130,10 @@
   }
 }
 
+.main {
+  background-color: var(--base-bg);
+}
+
 footer {
   padding-block: 1rem 8rem;
   padding-inline: 2rem;
@@ -170,7 +174,6 @@ footer {
 
   .main {
     grid-area: main;
-    background-color: var(--base-bg);
     border: 1px solid var(--base-border);
     border-inline-end: none;
     border-block-start: none;
