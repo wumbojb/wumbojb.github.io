@@ -1,0 +1,25 @@
+@use "../abstracts/breakpoints" as b;
+@use "../abstracts/mixins" as m;
+@use "../abstracts/variables" as v;
+
+.col-begin {
+  display: grid;
+  gap: 1rem;
+  align-items: start;
+
+  @for $i from 2 through 6 {
+    &--cols-#{$i} {
+      grid-template-columns: repeat($i, minmax(0, 1fr));
+    }
+  }
+}
+
+.col-item {
+  padding: 1em;
+  
+  &--card {
+    border: 1px solid var(--base-border);
+    border-radius: 0.25rem;
+    box-shadow: var(--base-shadow);
+  }
+}

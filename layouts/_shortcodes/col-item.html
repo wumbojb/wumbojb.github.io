@@ -1,0 +1,5 @@
+{{ $style := .Get "item" | default "" }}
+
+<div class="col-item col-item--{{ $style }}">
+  {{ .Inner }}
+</div>

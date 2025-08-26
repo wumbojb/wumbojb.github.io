@@ -15,6 +15,34 @@ __Advertisement :)__
 
 You will like those projects!
 
+{{% col-begin cols="2" %}}
+{{% col-item item="card" %}}
+{{< figure 
+    src="assets/images/default-image.webp" 
+    alt="Deskripsi alternatif" 
+    caption="Ini caption [contoh](/callout/)" 
+    title="Judul Figure" 
+    class="custom-class" 
+    link="https://example.com" 
+    target="_blank" 
+    rel="noopener" 
+    width="600" 
+    height="400" 
+    loading="lazy"
+>}}
+{{% /col-item %}}
+{{% card %}}
+
+Culpa esse cillum consectetur est nulla in ad esse dolor voluptate labore anim. Nostrud enim eiusmod deserunt deserunt adipisicing esse enim culpa fugiat irure ut voluptate Lorem. Proident labore exercitation amet occaecat irure sint ut ea anim. Ad ea elit sunt cillum anim occaecat eu magna ea nostrud est nisi. Incididunt qui nulla nostrud cupidatat excepteur Lorem ut exercitation magna.
+
+{{% /card %}}
+
+{{% card %}}
+
+Culpa esse cillum consectetur est nulla in ad esse dolor voluptate labore anim. Nostrud enim eiusmod deserunt deserunt adipisicing esse enim culpa fugiat irure ut voluptate Lorem. Proident labore exercitation amet occaecat irure sint ut ea anim. Ad ea elit sunt cillum anim occaecat eu magna ea nostrud est nisi. Incididunt qui nulla nostrud cupidatat excepteur Lorem ut exercitation magna.
+
+{{% /card %}}
+{{% /col-begin %}}
 ---
 
 # h1 Heading 8-)
